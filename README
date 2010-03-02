@@ -1,0 +1,10 @@
+Kirsch Edge Detector
+--------------------
+
+This is meant to be used as a reference implementation to test against for my ECE 327 project. This requires GD.
+
+To use it:
+./kirsch.pl image.png > output.png
+or
+./kirsch.pl image.png | gm display -
+
