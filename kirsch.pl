@@ -4,8 +4,24 @@ use warnings;
 use List::Util qw(max);
 
 use GD;
+use CGI qw(:standard);
 
-my $image = new GD::Image(shift()) or die $!;
+my $image;
+
+if (!(url() eq 'http://localhost'))
+{
+    use WWW::Mechanize;
+    my $mech = new WWW::Mechanize;
+
+    $image = new GD::Image($mech->get(param("img"))->content) or die $!;
+
+    print header(-type=>'image/png');
+}
+else
+{
+    $image = new GD::Image(shift()) or die $!;
+}
+
 my $output = new GD::Image($image->width,$image->height);
 
 # We can't work on the perimeter of the image.
