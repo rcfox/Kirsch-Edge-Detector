@@ -8,6 +8,8 @@ use CGI qw(:standard);
 
 my $image;
 
+# Checks to see if this is running as a command-line script.
+# I'm not sure of the best way to do this, but whatever.
 if (!(url() eq 'http://localhost'))
 {
     use WWW::Mechanize;
