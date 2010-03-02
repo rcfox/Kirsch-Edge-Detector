@@ -7,4 +7,5 @@ To use it:
 ./kirsch.pl image.png > output.png
 or
 ./kirsch.pl image.png | gm display -
-
+or
+http://www.yoursite.com/cgi-bin/kirsch.pl?img=<url>
